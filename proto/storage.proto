@@ -1,0 +1,31 @@
+syntax="proto3";
+
+package ports;
+
+option go_package = "./pkg/ports";
+
+message ManagmentKeyValue {
+  string key = 1;
+  string value = 2;
+}
+
+message CreateKeyValueRequest {
+  ManagmentKeyValue managmentKeyValue = 1;
+}
+
+message CreateKeyValueResponse {
+  string key = 1; 
+}
+
+message GetKeyValueRequest {
+  string key = 1;
+}
+
+message GetKeyValueResponse {
+  ManagmentKeyValue managmentKeyValue = 1;
+}
+
+service ManagmentKeyValueService {
+  rpc Create(CreateKeyValueRequest) returns (CreateKeyValueResponse);
+  rpc Get(GetKeyValueRequest) returns (GetKeyValueResponse);  
+}
