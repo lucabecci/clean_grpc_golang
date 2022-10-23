@@ -2,7 +2,7 @@ syntax="proto3";
 
 package ports;
 
-option go_package = "./pkg/ports";
+option go_package = "./pkg/ports/grpc";
 
 message ManagmentKeyValue {
   string key = 1;

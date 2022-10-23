@@ -1,4 +1,4 @@
-package core
+package actors
 
 type KeyManagment struct {
 	Managment string
